@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Services | NeuraNest</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- AOS Library CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -25,33 +28,41 @@
   <section class="services">
     <h1 class="section-title">Our Core Services</h1>
     <div class="service-grid">
-
+       
+      <div class="service-box" data-aos="fade-up">
       <div class="service-card fade-in" style="background-image: url('images/ai.jpg');">
         <h2>AI Automation</h2>
         <p>Streamline operations with smart tools that save time and improve accuracy.</p>
         <button class="explore-btn" onclick="showDetails('ai')">Explore</button>
         <div class="service-details" id="ai">Our AI automation includes intelligent chatbots, workflows, and custom machine learning solutions tailored for your business needs.</div>
       </div>
-
+      </div>
+      
+      <div class="service-box" data-aos="fade-up">
       <div class="service-card fade-in" style="background-image: url('images/web.jpg');">
         <h2>Website Design</h2>
         <p>Modern, fast, and responsive websites built to match your brand perfectly.</p>
         <button class="explore-btn" onclick="showDetails('web')">Explore</button>
         <div class="service-details" id="web">We design elegant websites with performance, SEO, and user experience at the core — including landing pages, blogs, and ecommerce.</div>
       </div>
-
+      </div>
+       
+      <div class="service-box" data-aos="fade-up">
       <div class="service-card fade-in" style="background-image: url('/images/python\ 2.5\ thumb.jpg');">
         <h2>Content Creation</h2>
         <p>High-quality visual and written content that connects with your audience.</p>
         <button class="explore-btn" onclick="showDetails('content')">Explore</button>
         <div class="service-details" id="content">We create branded content: blog posts, marketing videos, infographics, and social media creatives to boost your online presence.</div>
       </div>
-
+      </div>
+      
+      <div class="service-box" data-aos="fade-up">
       <div class="service-card fade-in" style="background-image: url('images/promo.jpg');">
         <h2>Digital Promotions</h2>
         <p>Maximize your reach with smart SEO, social media campaigns, and ads.</p>
         <button class="explore-btn" onclick="showDetails('promo')">Explore</button>
         <div class="service-details" id="promo">From SEO optimization to Instagram and YouTube marketing, we promote your business to the right people at the right time.</div>
+      </div>
       </div>
 
     </div>
@@ -69,5 +80,15 @@
     }
   </script>
   <script src="script.js"></script>
+  <!-- AOS Library JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true, // Animate only once
+    offset: 100, // Distance before trigger
+    duration: 800, // Animation duration in ms
+  });
+</script>
+
 </body>
 </html>

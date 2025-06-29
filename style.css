@@ -423,6 +423,8 @@ footer {
   background-color: #e4e4e7;
 }
 
+
+
 @media (max-width: 768px) {
   .nav-links {
     flex-direction: column;
@@ -447,6 +449,38 @@ footer {
 
   nav {
     position: relative;
+  }
+}
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+@media (min-width: 769px) {
+  .service-box:hover {
+    transform: scale(1.05);
+    transition: transform 0.4s ease;
+  }
+}
+
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-3d img {
+    width: 100%;
+    height: auto;
+  }
+
+  .contact-form {
+    padding: 1rem;
   }
 }
 
