@@ -457,4 +457,17 @@ html {
     padding: 1rem;
   }
 }
+/* White glow blink on scroll for service cards */
+@keyframes glowFade {
+  0% {
+    box-shadow: 0 0 12px 3px rgb(255, 253, 253);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+.service-card.aos-animate {
+  animation: glowFade 0.8s ease-out;
+}
 
