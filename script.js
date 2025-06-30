@@ -29,5 +29,3 @@ form.addEventListener("submit", function (e) {
       alert("Oops! Something went wrong.");
     });
 });
-
-
