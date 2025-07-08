@@ -247,7 +247,7 @@ footer {
 
 .service-card p {
   font-size: 1rem;
-  color: #a1a1aa;
+  color: #c0c0c7;
 }
 
 /* Hover Effect */
@@ -330,9 +330,9 @@ footer {
 
 /* Explore Button */
 .explore-btn {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  border: 1px solid #ffffff40;
+  background-color: rgba(240, 234, 234, 0.72);
+  color: #060505;
+  border: 1px solid #0c0b0bef;
   padding: 0.5rem 1.2rem;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -342,7 +342,8 @@ footer {
 }
 
 .explore-btn:hover {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgb(254, 252, 252);
+  transform: scale(0.97);
 }
 
 /* Hidden Detail Section */
