@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="shortcut icon" type="x-icon" href="/logo/final x-icon neuranest.jpg">
+  <link rel="icon" href="/logo/final x-icon neuranest (1).ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Services | NeuraNest</title>
   <link rel="stylesheet" href="style.css" />
@@ -36,38 +36,35 @@
     <div class="service-grid">
        
       <div class="service-box">
-      <div class="service-card"  data-aos="fade-up" style="background-image: url('/images/landing\ start\ image.jpg');">
+      <div class="service-card"  data-aos="fade-up" style="background-image: url('/images/iservice\ box\ bg\ image\ navyblue.avif');">
         <h2>AI Automation</h2>
-        <p>Streamline operations with smart tools that save time and improve accuracy.</p>
-        <button class="explore-btn" onclick="showDetails('ai')">Explore</button>
-        <div class="service-details" id="ai">Our AI automation includes intelligent chatbots, workflows, and custom machine learning solutions tailored for your business needs.</div>
+        <p>Smart AI automation solutions that optimize, streamline, and scale business operations.</p>
+        <a href="/ai-automations.html" class="explore-btn">Explore</a>
       </div>
       </div>
       
       <div class="service-box">
-      <div class="service-card"  data-aos="fade-up" style="background-image: url('/images/landing\ start\ image.jpg');">
-        <h2>Website Design</h2>
-        <p>Modern, fast, and responsive websites built to match your brand perfectly.</p>
-        <button class="explore-btn" onclick="showDetails('web')">Explore</button>
-        <div class="service-details" id="web">We design elegant websites with performance, SEO, and user experience at the core — including landing pages, blogs, and ecommerce.</div>
+      <div class="service-card"  data-aos="fade-up" style="background-image: url('/images/iservice\ box\ bg\ image\ navyblue.avif');">
+        <h2>Web Design</h2>
+        <p>Stunning and responsive custom web designs that engage and grow audiences online.</p>
+        <a href="/web-design.html" class="explore-btn">Explore</a>
       </div>
       </div>
        
       <div class="service-box">
-      <div class="service-card"  data-aos="fade-up" style="background-image: url('/images/ai');">
+      <div class="service-card"  data-aos="fade-up" style="background-image: url('/images/iservice\ box\ bg\ image\ navyblue.avif');">
         <h2>Content Creation</h2>
-        <p>High-quality visual and written content that connects with your audience.</p>
-        <button class="explore-btn" onclick="showDetails('content')">Explore</button>
-        <div class="service-details" id="content">We create branded content: blog posts, marketing videos, infographics, and social media creatives to boost your online presence.</div>
+        <p>Engaging video and thumbnail content that captivates and converts audiences.</p>
+        <a href="/content-creation.html" class="explore-btn">Explore</a>
       </div>
       </div>
       
       <div class="service-box">
-      <div class="service-card"  data-aos="fade-up" style="background-image: url('/service\ box\ images');">
-        <h2>Digital Promotions</h2>
-        <p>Maximize your reach with smart SEO, social media campaigns, and ads.</p>
-        <button class="explore-btn" onclick="showDetails('promo')">Explore</button>
-        <div class="service-details" id="promo">From SEO optimization to Instagram and YouTube marketing, we promote your business to the right people at the right time.</div>
+      <div class="service-card"  data-aos="fade-up" style="background-image: url('/images/iservice\ box\ bg\ image\ navyblue.avif');">
+        <h2>Internships</h2>
+        <p>Career-focused internships that empower students with real-world industry experience.</p>
+        <a href="/internships.html" class="explore-btn">Explore</a>
+
       </div>
       </div>
 
@@ -78,13 +75,7 @@
   <footer>
     <p>&copy; 2025 NeuraNest. All rights reserved.</p>
   </footer>
-
-  <script>
-    function showDetails(id) {
-      const detail = document.getElementById(id);
-      detail.style.display = detail.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
+  
   <script src="script.js"></script>
   <!-- AOS Library JS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -95,6 +86,87 @@
     duration: 800, // Animation duration in ms
   });
 </script>
+
+<!-- WhatsApp Chatbot Widget -->
+<script>
+  (function () {
+    var options = {
+      whatsapp: "+917093586231", // Replace with your WhatsApp number
+      position: "right", 
+      call_to_action: "Chat with us", 
+      title: "NeuraNest Support",
+      subtitle: "Ask us anything, we're here to help!",
+      auto_open: false, 
+      width: "320",
+      welcome_message: "Hi 👋 How can I help you today?",
+      zIndex: 999999,
+    };
+
+    var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
+    var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+    s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+    var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+  })();
+</script>
+
+
+ <!-- ✅ Stylish WhatsApp Button: Green Icon + Glow Animation -->
+<a href="https://wa.me/917093586231?text=Hello%20NeuraNest%2C%20I%27m%20looking%20for%20AI%20automation%20solutions%20for%20my%20business.%20Please%20share%20the%20details."
+   class="whatsapp-float-pro" 
+   target="_blank" 
+   title="Chat with us on WhatsApp">
+  <div class="whatsapp-icon-wrapper">
+    <img src="https://img.icons8.com/color/96/25D366/whatsapp--v1.png" alt="WhatsApp" />
+  </div>
+</a>
+
+<style>
+/* WhatsApp Button Position */
+.whatsapp-float-pro {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  text-decoration: none;
+}
+
+/* Wrapper: Rounded, Animated, Glow */
+.whatsapp-icon-wrapper {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #5d5d5e, #3c3c43);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: pulseGlow 2s infinite ease-in-out;
+  box-shadow: 0 0 15px rgba(233, 236, 234, 0.25);
+  transition: transform 0.3s ease;
+}
+
+/* WhatsApp Icon (Original Green) */
+.whatsapp-icon-wrapper img {
+  height: 40px;
+  width: 40px;
+}
+
+/* Glowing + Scaling Animation */
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(241, 244, 243, 0.25);
+  }
+  50% {
+    transform: scale(1.12);
+    box-shadow: 0 0 24px rgba(243, 246, 245, 0.5);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(232, 236, 234, 0.25);
+  }
+}
+</style>
+
 
 </body>
 </html>

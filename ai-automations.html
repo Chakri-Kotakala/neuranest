@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/logo/final x-icon neuranest (1).ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Automations</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      background: transparent;
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 1;
+      background: url('/images/bg-fallback.jpg') center center / cover no-repeat;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      margin-top: 0.5rem;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(236, 231, 231, 0.966);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      background-color: rgba(21, 17, 17, 0.05);
+    }
+    
+      @media (min-width: 769px) {
+  .video-wrapper {
+    max-width: 500px; /* or any smaller size you want */
+    }
+    }
+
+
+    #custom-video {
+      width: 100%;
+      display: block;
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 60px;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 12px 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      z-index: 2;
+    }
+
+    .play-button:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .controls {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      font-size: 14px;
+      z-index: 3;
+    }
+
+    .controls input[type="range"] {
+      height: 5px;
+      appearance: none;
+      background: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .controls .volume {
+      width: 80px;
+    }
+    .volume-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+    }
+
+     .volume-icon {
+  font-size: 18px;
+  color: white;
+    }
+
+
+    .controls button {
+      background: none;
+      border: 1px solid white;
+      color: white;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .ai-wrapper {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .ai-wrapper h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.8);
+    }
+
+    .ai-wrapper p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 1rem;
+      line-height: 1.8;
+      color: #e4e4e7;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+
+    @media (max-width: 768px) {
+      .ai-wrapper h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="/videos/web design bg viedo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="ai-wrapper">
+    <h1>AI AUTOMATIONS & AI AGENTS</h1>
+    <p>
+     Boost productivity and cut costs with our AI-powered automation tools—smarter workflows, seamless growth.
+      <br>
+     1.AI Automation for Growing Businesses.
+      <br>
+     2.AI Video Generates.
+    </p>
+
+    <div class="video-wrapper">
+      <video id="custom-video" playsinline>
+        <source src="/marketing videos/ai automation .mp4" type="video/mp4">
+      </video>
+      <div class="play-button" id="play-btn">&#9658;</div>
+
+      <!-- ✅ Custom Controls -->
+      <div class="controls">
+       <span id="time">00:00 / 00:00</span>
+       <div class="volume-control">
+        <span class="volume-icon">🔊</span>
+        <input type="range" id="volume" class="volume" min="0" max="1" step="0.01">
+       </div>
+       <button id="fullscreen-btn">Fullscreen</button>
+      </div>
+
+    </div>
+  </div>
+
+<script>
+  const wrapper = document.querySelector(".video-wrapper");
+  const video = document.getElementById("custom-video");
+  const playBtn = document.getElementById("play-btn");
+  const timeDisplay = document.getElementById("time");
+  const volumeSlider = document.getElementById("volume");
+  const fullscreenBtn = document.getElementById("fullscreen-btn");
+
+  function togglePlayPause() {
+    if (video.paused) {
+      video.play();
+      playBtn.style.display = "none";
+    } else {
+      video.pause();
+      playBtn.style.display = "block";
+    }
+  }
+
+  function formatTime(seconds) {
+    const min = Math.floor(seconds / 60).toString().padStart(2, '0');
+    const sec = Math.floor(seconds % 60).toString().padStart(2, '0');
+    return `${min}:${sec}`;
+  }
+
+  // Update time display
+  video.addEventListener("timeupdate", () => {
+    timeDisplay.textContent = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
+  });
+
+  // Volume control
+  volumeSlider.addEventListener("input", () => {
+    video.volume = volumeSlider.value;
+  });
+
+  // Set initial volume
+  volumeSlider.value = 0.5;
+  video.volume = 0.5;
+
+  // Fullscreen toggle
+  fullscreenBtn.addEventListener("click", () => {
+  if (video.requestFullscreen) {
+    video.requestFullscreen();
+  } else if (video.webkitRequestFullscreen) {
+    video.webkitRequestFullscreen();
+  } else if (video.msRequestFullscreen) {
+    video.msRequestFullscreen();
+  }
+});
+
+  playBtn.addEventListener("click", togglePlayPause);
+  video.addEventListener("click", togglePlayPause);
+  video.addEventListener("ended", () => {
+    playBtn.style.display = "block";
+  });
+</script>
+
+</body>
+</html>
