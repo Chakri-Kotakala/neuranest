@@ -1,248 +1,180 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" href="/logo/x-icon runove.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Internships</title>
+  <title>Internships | Runova</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <style>
-    * {
+    body {
+      background-color: #0e0e10;
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body, html {
-      width: 100%;
-      height: 100%;
-      font-family: 'Poppins', sans-serif;
-      color: #ffffff;
-      background: transparent;
-    }
-
-    .video-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      opacity: 1;
-      background: url('/images/bg-fallback.jpg') center center / cover no-repeat;
-    }
-
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      margin-top: 0.5rem;
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(236, 231, 231, 0.966);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(4px);
-      background-color: rgba(21, 17, 17, 0.05);
-    }
-     @media (min-width: 769px) {
-  .video-wrapper {
-    max-width: 500px; /* or any smaller size you want */
-    }
-    }
-
-    #custom-video {
-      width: 100%;
-      display: block;
-    }
-
-    .play-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 60px;
-      color: white;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 12px 20px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      z-index: 2;
-    }
-
-    .play-button:hover {
-      background: rgba(0, 0, 0, 0.8);
-    }
-
-    .controls {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      right: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: white;
-      font-size: 14px;
-      z-index: 3;
-    }
-
-    .controls input[type="range"] {
-      height: 5px;
-      appearance: none;
-      background: white;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .controls .volume {
-      width: 80px;
-    }
-    .volume-control {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-    }
-
-     .volume-icon {
-  font-size: 18px;
-  color: white;
-    }
-
-
-    .controls button {
-      background: none;
-      border: 1px solid white;
-      color: white;
-      padding: 5px 10px;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    .ai-wrapper {
-      position: relative;
-      z-index: 1;
-      padding: 5rem 2rem;
       text-align: center;
     }
 
-    .ai-wrapper h1 {
-      font-size: 2.8rem;
+    .service-hero {
+      padding: 5rem 2rem 3rem;
+    }
+    .service-hero h1 {
+      font-size: 3rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      text-shadow: 0 3px 8px rgba(0,0,0,0.8);
     }
-
-    .ai-wrapper p {
+    .service-hero p {
       font-size: 1.1rem;
-      max-width: 800px;
-      margin: 0 auto 1rem;
-      line-height: 1.8;
-      color: #e4e4e7;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      color: #d4d4d8;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
-    @media (max-width: 768px) {
-      .ai-wrapper h1 {
-        font-size: 2rem;
+    .poster-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 3rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .poster {
+      background-color: #18181b;
+      border: 2px solid #ffffff;
+      border-radius: 20px;
+      padding: 1rem;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .poster img {
+      width: 30%;
+      max-width: 250px;
+    }
+
+     @media(min-width: 768px) {
+       .poster img {
+         width: 20%;
+         max-width: 200px;
+             }
+      }
+
+    .poster:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255,255,255,0.6);
+    }
+    .poster h3 {
+      margin-top: 1rem;
+      font-size: 1.3rem;
+      color: #ffffff;
+    }
+    .poster p {
+      font-size: 0.95rem;
+      color: #c0c0c7;
+      margin-top: 0.5rem;
+    }
+
+
+    @media(min-width: 768px) {
+      .poster-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 4rem 2rem;
+      background-color: #121214;
+      margin-top: 3rem;
+    }
+    .cta-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+  .cta-btn {
+  background-color: #15de5f;   /* WhatsApp green */
+  color: #000000;              /* White text */
+  padding: 0.9rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  animation: pulse 1.5s infinite; /* nonstop zoom animation */
+ }
+
+  /* Zoom in/out animation */
+  @keyframes pulse {
+   0% { transform: scale(1); }
+   50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+ }
+
+  .cta-btn:hover {
+    background-color: #f6f9f7; /* slightly darker green on hover */
+    transform: scale(1.05);
+   }
+
   </style>
 </head>
 <body>
 
-  <!-- Background Video -->
-  <video autoplay muted loop playsinline class="video-bg">
-    <source src="/videos/web design bg viedo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <div class="ai-wrapper">
+  <!-- Hero Section -->
+  <section class="service-hero" data-aos="fade-up">
     <h1>Internships</h1>
-    <p>
-      Elevate careers with structured internships that foster talent, innovation, and professional growth.
-      <br>
-      1.Internships.
-      <br>
-      2.Mentorship.
-    </p>
+    <p>Kickstart your career with hands-on internships designed to give you real industry experience and mentorship.</p>
+  </section>
 
-    <div class="video-wrapper">
-      <video id="custom-video" playsinline poster="/services thumbnails/internships thiumbnail.jpg">
-        <source src="/marketing videos/internships.mp4" type="video/mp4">
-      </video>
-      <div class="play-button" id="play-btn">&#9658;</div>
-
-      <!-- ✅ Custom Controls -->
-      <div class="controls">
-       <span id="time">00:00 / 00:00</span>
-       <div class="volume-control">
-        <span class="volume-icon">🔊</span>
-        <input type="range" id="volume" class="volume" min="0" max="1" step="0.01">
-       </div>
-       <button id="fullscreen-btn">Fullscreen</button>
-      </div>
-
-    </div>
+  <!-- Posters Grid -->
+  <section class="poster-grid">
+  <div class="poster" data-aos="fade-up">
+    <img src="/internships posters/ai internships poster in internships.jpg" alt="AI Internships">
+    <h3>AI Internships</h3>
+    <p>Work on real AI agents and automations with hands-on mentorship.</p>
   </div>
 
-<script>
-  const wrapper = document.querySelector(".video-wrapper");
-  const video = document.getElementById("custom-video");
-  const playBtn = document.getElementById("play-btn");
-  const timeDisplay = document.getElementById("time");
-  const volumeSlider = document.getElementById("volume");
-  const fullscreenBtn = document.getElementById("fullscreen-btn");
+  <div class="poster" data-aos="fade-up">
+    <img src="/internships posters/web development poster in internship.jpg" alt="Web Development Internships">
+    <h3>Web Development</h3>
+    <p>Build responsive sites, UI components, and ship features to production.</p>
+  </div>
 
-  function togglePlayPause() {
-    if (video.paused) {
-      video.play();
-      playBtn.style.display = "none";
-    } else {
-      video.pause();
-      playBtn.style.display = "block";
-    }
-  }
+  <div class="poster" data-aos="fade-up">
+    <img src="/internships posters/content creation poster in internships.jpg" alt="Content Creation Internships">
+    <h3>Content Creation</h3>
+    <p>Create videos, thumbnails, and social posts for real client projects.</p>
+  </div>
 
-  function formatTime(seconds) {
-    const min = Math.floor(seconds / 60).toString().padStart(2, '0');
-    const sec = Math.floor(seconds % 60).toString().padStart(2, '0');
-    return `${min}:${sec}`;
-  }
+  <div class="poster" data-aos="fade-up">
+    <img src="/internships posters/mentornship poster in internship.jpg" alt="Mentorship Programs">
+    <h3>Mentorship Programs</h3>
+    <p>Weekly 1:1 guidance, code reviews, and career support to level you up.</p>
+  </div>
+</section>
 
-  // Update time display
-  video.addEventListener("timeupdate", () => {
-    timeDisplay.textContent = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
-  });
 
-  // Volume control
-  volumeSlider.addEventListener("input", () => {
-    video.volume = volumeSlider.value;
-  });
+  <!-- CTA Section -->
+  <section class="cta-section" data-aos="fade-up">
+    <h2>Want to Start Your Career with Us?</h2>
+    <a href="https://wa.me/917093586231?text=Hello%20Runova%2C%20I%27m%20interested%20in%20Internship%20opportunities." class="cta-btn" target="_blank">
+      Chat with us on WhatsApp
+    </a>
+  </section>
 
-  // Set initial volume
-  volumeSlider.value = 0.5;
-  video.volume = 0.5;
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Runova. All rights reserved.</p>
+  </footer>
 
-  // Fullscreen toggle
-  fullscreenBtn.addEventListener("click", () => {
-  if (video.requestFullscreen) {
-    video.requestFullscreen();
-  } else if (video.webkitRequestFullscreen) {
-    video.webkitRequestFullscreen();
-  } else if (video.msRequestFullscreen) {
-    video.msRequestFullscreen();
-  }
-});
-
-  playBtn.addEventListener("click", togglePlayPause);
-  video.addEventListener("click", togglePlayPause);
-  video.addEventListener("ended", () => {
-    playBtn.style.display = "block";
-  });
-</script>
-
+  <!-- AOS Library JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, offset: 120 });
+  </script>
 </body>
 </html>
